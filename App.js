@@ -1,13 +1,9 @@
-import List from "./Componant/List"
-import Login from "./Componant/Login"
 import React, { Component } from "react";
 import { Provider } from "react-redux";
-import store from "./redux"
+import store from "./redux";
 import { Spinner } from "native-base";
 import RootNavigator from "./Navigation";
 import { NavigationContainer } from "@react-navigation/native";
-
-// 
 
 export default class App extends Component {
   state = {

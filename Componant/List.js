@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Body, Text, Thumbnail, Button, Left, H3, H1 } from 'native-base';
 import Logo from "../assets/pic/Logo.png"
-import Data from '../Data/data';
+import Data from '../Data/data'; // data import should be lowercased
 import { Image } from 'react-native';
 
 export default class List extends Component {

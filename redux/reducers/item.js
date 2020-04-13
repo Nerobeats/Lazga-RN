@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
             const list = action.payload
             return {
                 ...state,
-                char: list
+                char: list //what's char?
             }
         default:
             return state

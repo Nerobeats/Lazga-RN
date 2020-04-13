@@ -1,6 +1,6 @@
 import { ADD_ITEM, REMOVE_ITEM, CHECKOUT } from "./types";
 
-const initialState = { cartItems: null };
+const initialState = { cartItems: null }; // maybe rename this to just items?
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
             const newItem = action.payload
             return {
                 ...state,
-                cartItems: state.cartItems.concat(newItem)
+                cartItems: state.cartItems.concat(newItem) //.concat takes an array, not an object
             }
         case REMOVE_ITEM:
             const removedItem = action.payload

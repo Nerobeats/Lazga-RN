@@ -6,9 +6,9 @@ export default class CardImageExample extends Component {
     render() {
         return (
 
-            < Container >
+            < Container > {/* There's a space here, does this work with the space?  */}
                 <Content>
-                    {data.map(cata => {
+                    {data.map(cata => { {/* Don't put the .map() within the JSX, define it into a const above the return  */}
                         return (
 
                             <Card>

@@ -20,7 +20,7 @@ export default class List extends Component {
                         <CardItem>
                             <Left>
                                 <Body>
-                                    <H3>Name:{this.props.route.params.item.name}</H3>
+                                    <H3>Name:{this.props.route.params.item.name}</H3> {/* should probably put the item in a const above the return  */}
                                     <H3>Price:{this.props.route.params.item.price}</H3>
                                     <H3>Detail:{this.props.route.params.item.detail}</H3>
                                 </Body>
