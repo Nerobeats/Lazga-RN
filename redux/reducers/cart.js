@@ -1,6 +1,6 @@
-import { ADD_ITEM, REMOVE_ITEM, CHECKOUT } from "./types";
+import { ADD_ITEM, REMOVE_ITEM, CHECKOUT } from "../actions/actionTypes";
 
-const initialState = { cartItems: null };
+const initialState = { items: [] };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -8,20 +8,18 @@ const reducer = (state = initialState, action) => {
             const newItem = action.payload
             return {
                 ...state,
-                cartItems: state.cartItems.concat(newItem)
+                items: [newItem, ...state.items]
             }
         case REMOVE_ITEM:
             const removedItem = action.payload
             return {
                 ...state,
-                cartItems: state.cartItems.filter(item => {
-                    item !== removedItem
-                })
+                items: state.items.filter(item => item !== removedItem)
             }
         case CHECKOUT:
             return {
                 ...state,
-                cartItems: []
+                items: []
             }
         default:
             return state

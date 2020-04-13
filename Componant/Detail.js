@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Body, Text, Thumbnail, Button, Left, H3, H1, Picker, Right } from 'native-base';
 import { Image } from 'react-native';
-import Hoodies from "../assets/pic/Catagories/HoodieCata.jpg"
+import { connect } from "react-redux";
+import { addItemToCart } from "../redux/actions/cart"
 
-
-export default class List extends Component {
+class Detail extends Component {
     state = {
         Size: "Small"
     }
@@ -14,15 +14,15 @@ export default class List extends Component {
                 <Content>
                     <Card>
                         <CardItem cardBody>
-                            <Image source={Hoodies}
-                                style={{ height: 350, width: null, flex: 1 }} />
+                            <Image source={{ uri: this.props.route.params.item.image_url }}
+                                style={{ height: 350, width: "100%" }} />
                         </CardItem>
                         <CardItem>
                             <Left>
                                 <Body>
                                     <H3>Name:{this.props.route.params.item.name}</H3>
-                                    <H3>Price:{this.props.route.params.item.price}</H3>
-                                    <H3>Detail:{this.props.route.params.item.detail}</H3>
+                                    <H3>Price:19JD</H3>
+                                    <H3>Tags:{this.props.route.params.item.tags}</H3>
                                 </Body>
                             </Left>
                         </CardItem>
@@ -41,7 +41,7 @@ export default class List extends Component {
                         <Picker.Item label="Large" value="Large" />
                     </Picker>
 
-                    <Button onPress={() => alert("No")} style={{
+                    <Button onPress={(item) => this.props.addItemToCart(this.props.route.params.item)} style={{
                         marginLeft: 40, alignSelf: "center",
                         backgroundColor: "#2D7FC0", borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 1
                     }} full  >
@@ -57,3 +57,10 @@ export default class List extends Component {
 
     }
 }
+const mapDispatchToProps = dispatch => {
+    return {
+        addItemToCart: (item) =>
+            dispatch(addItemToCart(item))
+    };
+};
+export default connect(null, mapDispatchToProps)(Detail)

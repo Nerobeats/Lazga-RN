@@ -1,6 +1,6 @@
 import { FETCH_ITEMS } from "../actions/actionTypes";
 
-const initialState = { char: null };
+const initialState = { items: null };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
             const list = action.payload
             return {
                 ...state,
-                char: list
+                items: list
             }
         default:
             return state

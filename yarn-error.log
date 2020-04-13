@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-navigation
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-scalable-image'
 
 PATH: 
-  C:\Python38\Scripts\;C:\Python38\;C:\Python27\;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\Home\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Home\AppData\Local\Programs\Python\Python38-32\;C:\Users\Home\AppData\Local\Microsoft\WindowsApps;C:\Users\Home\AppData\Local\atom\bin;C:\Users\Home\AppData\Roaming\npm;C:\Users\Home\AppData\Local\Yarn\bin;C:\Users\Home\AppData\Local\Programs\Microsoft VS Code\bin
+  C:\Program Files\Git\cmd;C:\Python38\Scripts\;C:\Python38\;C:\Python27\;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\Home\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Home\AppData\Local\Programs\Python\Python38-32\;C:\Users\Home\AppData\Local\Microsoft\WindowsApps;C:\Users\Home\AppData\Local\atom\bin;C:\Users\Home\AppData\Roaming\npm;C:\Users\Home\AppData\Local\Yarn\bin;C:\Users\Home\AppData\Local\Programs\Microsoft VS Code\bin
 
 Yarn version: 
   1.22.0
@@ -14,7 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\Home\Desktop\Lazga\LazgaRN\node_modules\fbjs\node_modules\.bin'
+  Error: https://registry.yarnpkg.com/react-native-scalable-image%27: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66084:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140727:22)
+      at Request.emit (events.js:316:20)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141699:10)
+      at Request.emit (events.js:316:20)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141621:12)
+      at Object.onceWrapper (events.js:422:28)
+      at IncomingMessage.emit (events.js:328:22)
+      at endReadableNT (_stream_readable.js:1201:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
 
 npm manifest: 
   {
@@ -28,6 +38,7 @@ npm manifest:
     },
     "dependencies": {
       "@expo/vector-icons": "^10.0.6",
+      "@react-native-community/masked-view": "^0.1.8",
       "@react-navigation/native": "^5.1.5",
       "@react-navigation/stack": "^5.2.10",
       "axios": "^0.19.2",
@@ -38,6 +49,10 @@ npm manifest:
       "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
       "react-native-gesture-handler": "~1.6.0",
       "react-native-reanimated": "~1.7.0",
+      "react-native-safe-area-context": "^0.7.3",
+      "react-native-safe-area-view": "^1.0.0",
+      "react-native-scaled-image": "^0.0.1",
+      "react-native-screens": "^2.4.0",
       "react-native-web": "~0.11.7",
       "react-navigation": "^4.3.7",
       "react-redux": "^7.2.0",
@@ -1183,6 +1198,11 @@ Lockfile:
       sudo-prompt "^9.0.0"
       wcwidth "^1.0.1"
       ws "^1.1.0"
+  
+  "@react-native-community/masked-view@^0.1.8":
+    version "0.1.8"
+    resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.8.tgz#05c9c800f258274a34abd584596464b86fbd92dc"
+    integrity sha512-y+mnsPPC4Etzs/waHIC9Pj3DwhVQGqVru0n1KSqHZc0moKNAZ0NRBWYVat9awLIjjVrnepUva/+/bi31T4hR4A==
   
   "@react-navigation/core@^3.7.5":
     version "3.7.5"
@@ -4591,12 +4611,36 @@ Lockfile:
     dependencies:
       fbjs "^1.0.0"
   
+  react-native-safe-area-context@^0.7.3:
+    version "0.7.3"
+    resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-0.7.3.tgz#ad6bd4abbabe195332c53810e4ce5851eb21aa2a"
+    integrity sha512-9Uqu1vlXPi+2cKW/CW6OnHxA76mWC4kF3wvlqzq4DY8hn37AeiXtLFs2WkxH4yXQRrnJdP6ivc65Lz+MqwRZAA==
+  
   react-native-safe-area-view@^0.14.8:
     version "0.14.9"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.9.tgz#90ee8383037010d9a5055a97cf97e4c1da1f0c3d"
     integrity sha512-WII/ulhpVyL/qbYb7vydq7dJAfZRBcEhg4/UWt6F6nAKpLa3gAceMOxBxI914ppwSP/TdUsandFy6lkJQE0z4A==
     dependencies:
       hoist-non-react-statics "^2.3.1"
+  
+  react-native-safe-area-view@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-1.0.0.tgz#17be33aeb30702e07bb846378f4c9561e2dd6684"
+    integrity sha512-cJOBfM6t7HL3NQf3QTVKO6BU7esCCMbKJjpNy9L2nT724UzZ2y6E3ol/3QWsw7ySegWlF857+RIkRLsnpltFVg==
+    dependencies:
+      hoist-non-react-statics "^2.3.1"
+  
+  react-native-scaled-image@^0.0.1:
+    version "0.0.1"
+    resolved "https://registry.yarnpkg.com/react-native-scaled-image/-/react-native-scaled-image-0.0.1.tgz#0d593dd06205c30ea77495fa0e808bc1c789bf0d"
+    integrity sha512-Sr/dIQn/M6R5zBV1jEXwkJVLVhE4d2micXucOzzMvMb30RJkD1Onu7gkQKffW28QQ5xI5geQFEuFZfjGAy4wBw==
+  
+  react-native-screens@^2.4.0:
+    version "2.4.0"
+    resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.4.0.tgz#7706f24d942dee387626014ee4d96094a3d1b9ce"
+    integrity sha512-7GcXlaj7IIrM4l5Ub7BPTkNQJ2slHGt2bhmfWmW73NTXEv+7pjHlp+JpQO32Yn+O8UQGPFf0rsesfYUdER7ppQ==
+    dependencies:
+      debounce "^1.2.0"
   
   react-native-vector-icons@^6.6.0:
     version "6.6.0"

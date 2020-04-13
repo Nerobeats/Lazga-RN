@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM, CHECKOUT } from "./types";
+import { ADD_ITEM, REMOVE_ITEM, CHECKOUT } from "./actionTypes";
 
 export const addItemToCart = item => ({
     type: ADD_ITEM,

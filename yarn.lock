@@ -4558,6 +4558,16 @@ react-native-safe-area-view@^1.0.0:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
+react-native-scalable-image@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-scalable-image/-/react-native-scalable-image-1.0.0.tgz#2751a02c2610b4266eb06ce0d466fb1eff266127"
+  integrity sha512-Hcizro1eh7GhelTIjpAYi6WR8ybHNFkMMPSpEeMNI6u1Lxt7b6o97MM9r7+g8hlUjKUlNPQvwaqcf+rW75sSfg==
+
+react-native-scaled-image@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-scaled-image/-/react-native-scaled-image-0.0.1.tgz#0d593dd06205c30ea77495fa0e808bc1c789bf0d"
+  integrity sha512-Sr/dIQn/M6R5zBV1jEXwkJVLVhE4d2micXucOzzMvMb30RJkD1Onu7gkQKffW28QQ5xI5geQFEuFZfjGAy4wBw==
+
 react-native-screens@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.4.0.tgz#7706f24d942dee387626014ee4d96094a3d1b9ce"
