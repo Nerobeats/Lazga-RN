@@ -25,7 +25,7 @@ export default class StackedLabelExample extends Component {
                             {/* <Input /> */}
                         </Item>
                     </Form>
-                    <Button onPress={() => alert("No")} style={{
+                    <Button onPress={() => alert("No")} {/* should be connected to redux  */} style={{
                         alignSelf: "center",
                         backgroundColor: "#2D7FC0", borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 1, width: '25%', marginTop: 10
                     }} full rounded full rounded >
