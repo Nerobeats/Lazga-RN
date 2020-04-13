@@ -12,20 +12,23 @@ export default class StackedLabelExample extends Component {
                     style={{ flex: 1, height: null, width: null, resizeMode: 'cover' }}
                 />
                 <H1 style={{ alignSelf: "center" }}>
-                    Join store plz
+                    Join Maws plz
                     </H1>
                 <Content>
                     <Form>
                         <Item stackedLabel>
                             <Label>Username</Label>
-                            <Input />
+                            {/* <Input /> */}
                         </Item>
                         <Item stackedLabel last>
                             <Label>Password</Label>
-                            <Input />
+                            {/* <Input /> */}
                         </Item>
                     </Form>
-                    <Button onPress={() => alert("No")} style={{ height: 40, width: 90, alignSelf: "center", text: "center", marginTop: 10, }} full rounded >
+                    <Button onPress={() => alert("No")} style={{
+                        alignSelf: "center",
+                        backgroundColor: "#2D7FC0", borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 1, width: '25%', marginTop: 10
+                    }} full rounded full rounded >
                         <Text > Signup</Text>
                     </Button>
                 </Content>

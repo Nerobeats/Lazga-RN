@@ -6,7 +6,8 @@ import Login from "../Componant/Login"
 import Signup from "../Componant/Signup"
 import List from "../Componant/List"
 import Detail from "../Componant/Detail"
-
+import Categories from "../Componant/Categories"
+import Cart from "../Componant/Cart"
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -26,6 +27,8 @@ function RootNavigator() {
         >
             <Screen name="Login" component={Login} />
             <Screen name="Signup" component={Signup} />
+            <Screen name="Categories" component={Categories} />
+            <Screen name="Cart" component={Cart} />
             <Screen
                 name="List"
                 component={List}
@@ -35,6 +38,7 @@ function RootNavigator() {
                         <Icon
                             name="shoppingcart"
                             type="AntDesign"
+                            onPress={() => navigation.navigate("Cart")}
                         />
                     ),
                 })}
@@ -48,6 +52,7 @@ function RootNavigator() {
                         <Icon
                             name="shoppingcart"
                             type="AntDesign"
+                            onPress={() => navigation.navigate("Cart")}
                         />
                     ),
                 })}
