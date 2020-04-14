@@ -16,24 +16,22 @@ class LazgaList extends Component {
                     {this.props.items.map(item => {
                         return (
                             <Card key={item.id} >
-                                <CardItem cardBody>
-                                    {/* <Image source={{ uri: item.image_url }}
+                                <CardItem cardBody >
+                                    <Image source={{ uri: item.image_url }}
                                         style={{
                                             alignSelf: 'center',
-                                            height: 100,
-                                            width: 100,
+                                            height: 300,
+                                            width: null,
                                             flex: 1
                                         }}
-
-                                    /> */}
+                                    />
                                 </CardItem>
 
                                 <CardItem>
-
-                                    <Button onPress={() => this.props.navigation.navigate("Detail", { item })}
+                                    <Button dark transparent
+                                        onPress={() => this.props.navigation.navigate("Detail", { item })}
                                         style={{
                                             alignSelf: "center",
-                                            backgroundColor: "#2D7FC0", borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 1
                                         }} full  >
                                         <Text>{item.name}</Text>
                                     </Button>

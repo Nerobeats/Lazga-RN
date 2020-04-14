@@ -9,7 +9,7 @@ export default class StackedLabelExample extends Component {
             <Container>
                 <Image
                     source={logo}
-                    style={{ flex: 1, height: null, width: null, resizeMode: 'cover' }}
+                    style={{ flex: 1, height: null, width: 300, alignSelf: "center" }}
                 />
                 <H1 style={{ alignSelf: "center" }}>
                     Join store plz
