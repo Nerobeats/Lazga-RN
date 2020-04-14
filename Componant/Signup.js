@@ -25,12 +25,14 @@ class Signup extends Component {
     email: "",
   };
   render() {
+    const { errors } = this.props
     return (
       <Container>
         <Image
           source={logo}
           style={{ flex: 1, height: null, width: 300, alignSelf: "center" }}
         />
+        {errors ? <Text>{errors}</Text> : <></>}
         <H1 style={{ alignSelf: "center" }}>Join store plz</H1>
         <Content>
           <Form>
