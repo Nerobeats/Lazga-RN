@@ -3,12 +3,18 @@ import { Container, Content, Card, CardItem, Text, Button } from "native-base";
 import { Image } from "react-native";
 import { connect } from "react-redux";
 
+/**
+ * make function
+ */
 class LazgaList extends Component {
   render() {
     return (
       <Container>
         <Content>
           {this.props.items.map((item) => {
+            /**
+             * own component
+             */
             return (
               <Card key={item.id}>
                 <CardItem cardBody>
@@ -49,6 +55,10 @@ class LazgaList extends Component {
 const mapStateToProps = (state) => ({
   items: state.item.items,
 });
+
+/**
+ * dead code
+ */
 // const mapDispatchToProps = dispatch => {
 //     return {
 //         addItemToCart: (item) =>

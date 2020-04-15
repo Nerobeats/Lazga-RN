@@ -1,3 +1,7 @@
+/**
+ * This file should be called "items"
+ */
+
 import { FETCH_ITEMS } from "./actionTypes";
 import instance from "./instance";
 

@@ -14,6 +14,7 @@ const { Navigator, Screen } = createStackNavigator();
 function RootNavigator() {
   return (
     <Navigator
+      // The required features expects the items list screen to be the initial route
       initialRouteName="Login"
       screenOptions={{
         headerTintColor: "black",
