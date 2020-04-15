@@ -10,6 +10,9 @@ import {
   Button,
   H1,
   Text,
+  Card,
+  CardItem,
+  Body,
 } from "native-base";
 import { Image, TextInput } from "react-native";
 import logo from "../assets/pic/Logo.png";
@@ -30,10 +33,19 @@ class Signup extends Component {
       <Container>
         <Image
           source={logo}
-          style={{ flex: 1, height: null, width: 300, alignSelf: "center" }}
+          style={{ flex: 1, height: null, width: 300, alignSelf: "center", resizeMode: 'cover' }}
         />
-        {errors ? <Text>{errors}</Text> : <></>}
-        <H1 style={{ alignSelf: "center" }}>Join store plz</H1>
+
+        <Card >
+          <CardItem>
+            <Body>
+              <Text style={{ alignSelf: "center" }}>
+                {errors ? errors : "Welcome to Lazga family "}
+              </Text>
+            </Body>
+          </CardItem>
+        </Card>
+
         <Content>
           <Form>
             <Item stackedLabel>
@@ -84,7 +96,6 @@ class Signup extends Component {
             </Item>
           </Form>
           <Button
-            // onPress={() => this.props.navigation.navigate("List")}
             onPress={() =>
               this.props.signup(this.state, () =>
                 this.props.navigation.navigate("List")
@@ -108,12 +119,11 @@ class Signup extends Component {
             onPress={() => this.props.navigation.navigate("Login")}
             style={{
               alignSelf: "center",
-              width: "25%",
               marginTop: 10,
             }}
             transparent
           >
-            <Text> Not a Maw ?! </Text>
+            <Text>Already have an account ?</Text>
           </Button>
         </Content>
       </Container>

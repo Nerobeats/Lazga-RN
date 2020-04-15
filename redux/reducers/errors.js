@@ -1,7 +1,7 @@
 import { SET_ERRORS } from "../actions/actionTypes";
 
 const initialState = {
-  errors: [],
+  errors: null,
 };
 
 const reducer = (state = initialState, action) => {
