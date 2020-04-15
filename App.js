@@ -5,8 +5,6 @@ import { Spinner } from "native-base";
 import RootNavigator from "./Navigation";
 import { NavigationContainer } from "@react-navigation/native";
 
-// 
-
 export default class App extends Component {
   state = {
     loading: true,
