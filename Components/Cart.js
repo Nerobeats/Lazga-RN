@@ -14,6 +14,9 @@ import {
 import { connect } from "react-redux";
 import { removeItemFromCart } from "../redux/actions/cart";
 
+/**
+ * this doesn't need to be a class
+ */
 class Cart extends Component {
   render() {
     return (
@@ -21,6 +24,9 @@ class Cart extends Component {
         <Content>
           <List>
             {this.props.items.map((item) => {
+              /**
+               * this should be its own component
+               */
               return (
                 <ListItem thumbnail>
                   <Left>

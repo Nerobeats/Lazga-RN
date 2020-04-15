@@ -20,6 +20,7 @@ class Detail extends Component {
     Size: "Small",
   };
   render() {
+    const { item } = this.props.route.params; // this way you don't have to keep typing it
     return (
       <Container>
         <Content>
@@ -54,7 +55,7 @@ class Detail extends Component {
           </Picker>
 
           <Button
-            onPress={(item) =>
+            onPress={() =>
               this.props.addItemToCart(this.props.route.params.item)
             }
             style={{
