@@ -3,7 +3,6 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 import { fetchItems } from "./actions/item";
 import { checkForToken } from "./actions/user";
-// Actions
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

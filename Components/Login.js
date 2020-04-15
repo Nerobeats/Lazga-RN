@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import {
   Container,
-  Header,
   Content,
   Form,
   Item,
-  Input,
   Label,
   Button,
   H1,
@@ -13,19 +11,16 @@ import {
 } from "native-base";
 import { Image, TextInput } from "react-native";
 import logo from "../assets/pic/Logo.png";
-import { signup } from "../redux/actions/user";
+import { login } from "../redux/actions/user";
 import { connect } from "react-redux";
 
-class Signup extends Component {
+class Login extends Component {
   state = {
     username: "",
     password: "",
-    first_name: "",
-    last_name: "",
-    email: "",
   };
   render() {
-    const { errors } = this.props
+    const { errors } = this.props;
     return (
       <Container>
         <Image
@@ -33,6 +28,7 @@ class Signup extends Component {
           style={{ flex: 1, height: null, width: 300, alignSelf: "center" }}
         />
         {errors ? <Text>{errors}</Text> : <></>}
+
         <H1 style={{ alignSelf: "center" }}>Join store plz</H1>
         <Content>
           <Form>
@@ -55,38 +51,10 @@ class Signup extends Component {
                 onChangeText={(password) => this.setState({ password })}
               />
             </Item>
-            <Item stackedLabel>
-              <Label>First Name</Label>
-              <TextInput
-                placeholder="First Name"
-                placeholderTextColor="#A6AEC1"
-                value={this.state.first_name}
-                onChangeText={(first_name) => this.setState({ first_name })}
-              />
-            </Item>
-            <Item stackedLabel>
-              <Label>Last Name</Label>
-              <TextInput
-                placeholder="Last Name"
-                placeholderTextColor="#A6AEC1"
-                value={this.state.last_name}
-                onChangeText={(last_name) => this.setState({ last_name })}
-              />
-            </Item>
-            <Item stackedLabel>
-              <Label>E-mail</Label>
-              <TextInput
-                placeholder="E-mail"
-                placeholderTextColor="#A6AEC1"
-                value={this.state.email}
-                onChangeText={(email) => this.setState({ email })}
-              />
-            </Item>
           </Form>
           <Button
-            // onPress={() => this.props.navigation.navigate("List")}
             onPress={() =>
-              this.props.signup(this.state, () =>
+              this.props.login(this.state, () =>
                 this.props.navigation.navigate("List")
               )
             }
@@ -102,10 +70,10 @@ class Signup extends Component {
             full
             rounded
           >
-            <Text> Signup</Text>
+            <Text> Login</Text>
           </Button>
           <Button
-            onPress={() => this.props.navigation.navigate("Login")}
+            onPress={() => this.props.navigation.navigate("Signup")}
             style={{
               alignSelf: "center",
               width: "25%",
@@ -125,6 +93,6 @@ const mapStateToProps = (state) => {
     errors: state.errors.errors,
   };
 };
-const mapDispatchToProps = { signup };
+const mapDispatchToProps = { login };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
