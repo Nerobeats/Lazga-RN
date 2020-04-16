@@ -20,22 +20,23 @@ class Detail extends Component {
     Size: "Small",
   };
   render() {
+    const { item } = this.props.route.params
     return (
       <Container>
         <Content>
           <Card>
             <CardItem cardBody>
               <Image
-                source={{ uri: this.props.route.params.item.image_url }}
+                source={{ uri: item.image_url }}
                 style={{ height: 350, width: "100%" }}
               />
             </CardItem>
             <CardItem>
               <Left>
                 <Body>
-                  <H3>Name:{this.props.route.params.item.name}</H3>
-                  <H3>Price:19JD</H3>
-                  <H3>Tags:{this.props.route.params.item.tags}</H3>
+                  <H3>Name:{item.name}</H3>
+                  <H3>Price:{item.itemPrice}</H3>
+                  <H3>description:{item.description}</H3>
                 </Body>
               </Left>
             </CardItem>
@@ -54,8 +55,8 @@ class Detail extends Component {
           </Picker>
 
           <Button
-            onPress={(item) =>
-              this.props.addItemToCart(this.props.route.params.item)
+            onPress={() =>
+              this.props.addItemToCart(item)
             }
             style={{
               alignSelf: "center",
