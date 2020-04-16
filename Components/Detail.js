@@ -58,14 +58,14 @@ class Detail extends Component {
               this.props.addItemToCart(this.props.route.params.item)
             }
             style={{
-              marginLeft: 40,
               alignSelf: "center",
               backgroundColor: "#2D7FC0",
               borderBottomWidth: 2,
               borderLeftWidth: 2,
               borderRightWidth: 1,
+              marginBottom: 10
             }}
-            full
+            rounded
           >
             <Text style={{ color: "white" }}> Add to cart </Text>
           </Button>

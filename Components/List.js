@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Content, Card, CardItem, Text, Button } from "native-base";
-import { Image } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 
 class LazgaList extends Component {
@@ -10,34 +10,37 @@ class LazgaList extends Component {
         <Content>
           {this.props.items.map((item) => {
             return (
-              <Card key={item.id}>
-                <CardItem cardBody>
-                  <Image
-                    source={{ uri: item.image_url }}
-                    style={{
-                      alignSelf: "center",
-                      height: 300,
-                      width: null,
-                      flex: 1,
-                    }}
-                  />
-                </CardItem>
-                <CardItem>
-                  <Button
-                    dark
-                    transparent
-                    onPress={() =>
-                      this.props.navigation.navigate("Detail", { item })
-                    }
-                    style={{
-                      alignSelf: "center",
-                    }}
-                    full
-                  >
-                    <Text>{item.name}</Text>
-                  </Button>
-                </CardItem>
-              </Card>
+              <TouchableOpacity key={item.id}
+                onPress={() =>
+                  this.props.navigation.navigate("Detail", { item })}
+              >
+
+                <Card >
+                  <CardItem cardBody>
+                    <Image
+                      source={{ uri: item.image_url }}
+                      style={{
+                        alignSelf: "center",
+                        height: 300,
+                        width: null,
+                        flex: 1,
+                      }}
+                    />
+                  </CardItem>
+                  <CardItem>
+                    <Button
+                      dark
+                      transparent
+                      style={{
+                        alignSelf: "center",
+                      }}
+                      full
+                    >
+                      <Text>{item.name}</Text>
+                    </Button>
+                  </CardItem>
+                </Card>
+              </TouchableOpacity>
             );
           })}
         </Content>
