@@ -14,13 +14,12 @@ import {
 import { Image } from "react-native";
 import { connect } from "react-redux";
 import { addItemToCart } from "../redux/actions/cart";
-
+import ColorSize from "./ColorSize"
 class Detail extends Component {
-  state = {
-    Size: "Small",
-  };
   render() {
     const { item } = this.props.route.params
+    const { size, color } = this.props
+
     return (
       <Container>
         <Content>
@@ -34,25 +33,15 @@ class Detail extends Component {
             <CardItem>
               <Left>
                 <Body>
-                  <H3>Name:{item.name}</H3>
-                  <H3>Price:{item.itemPrice}</H3>
-                  <H3>description:{item.description}</H3>
+                  <Text>Name:{item.name}</Text>
+                  <Text>Price:{item.itemPrice}</Text>
+                  <Text>description:{item.description}</Text>
                 </Body>
               </Left>
             </CardItem>
           </Card>
+          <ColorSize />
 
-          <Picker
-            note
-            mode="dropdown"
-            style={{ width: 150 }}
-            selectedValue={this.state.Size}
-            onValueChange={(Size) => this.setState({ Size })}
-          >
-            <Picker.Item label="Small" value="Small" />
-            <Picker.Item label="Medium" value="Medium" />
-            <Picker.Item label="Large" value="Large" />
-          </Picker>
 
           <Button
             onPress={() =>
@@ -80,4 +69,9 @@ const mapDispatchToProps = (dispatch) => {
     addItemToCart: (item) => dispatch(addItemToCart(item)),
   };
 };
-export default connect(null, mapDispatchToProps)(Detail);
+const mapStateToProps = (state) => ({
+  size: state.options.size,
+  color: state.options.color,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);
