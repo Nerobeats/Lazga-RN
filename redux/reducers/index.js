@@ -12,5 +12,5 @@ export default combineReducers({
   cart,
   user: userReducer,
   errors: errorReducer,
-  options: optionReducer
+  options: optionReducer,
 });

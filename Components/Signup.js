@@ -28,15 +28,21 @@ class Signup extends Component {
     email: "",
   };
   render() {
-    const { errors } = this.props
+    const { errors } = this.props;
     return (
       <Container>
         <Image
           source={logo}
-          style={{ flex: 1, height: null, width: 300, alignSelf: "center", resizeMode: 'cover' }}
+          style={{
+            flex: 1,
+            height: null,
+            width: 300,
+            alignSelf: "center",
+            resizeMode: "cover",
+          }}
         />
 
-        <Card >
+        <Card>
           <CardItem>
             <Body>
               <Text style={{ alignSelf: "center" }}>

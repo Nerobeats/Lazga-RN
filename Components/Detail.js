@@ -14,11 +14,11 @@ import {
 import { Image } from "react-native";
 import { connect } from "react-redux";
 import { addItemToCart } from "../redux/actions/cart";
-import ColorSize from "./ColorSize"
+import ColorSize from "./ColorSize";
 class Detail extends Component {
   render() {
-    const { item } = this.props.route.params
-    const { size, color } = this.props
+    const { item } = this.props.route.params;
+    const { size, color } = this.props;
 
     return (
       <Container>
@@ -42,18 +42,15 @@ class Detail extends Component {
           </Card>
           <ColorSize />
 
-
           <Button
-            onPress={() =>
-              this.props.addItemToCart(item)
-            }
+            onPress={() => this.props.addItemToCart(item)}
             style={{
               alignSelf: "center",
               backgroundColor: "#2D7FC0",
               borderBottomWidth: 2,
               borderLeftWidth: 2,
               borderRightWidth: 1,
-              marginBottom: 10
+              marginBottom: 10,
             }}
             rounded
           >

@@ -10,12 +10,13 @@ class LazgaList extends Component {
         <Content>
           {this.props.items.map((item) => {
             return (
-              <TouchableOpacity key={item.id}
+              <TouchableOpacity
+                key={item.id}
                 onPress={() =>
-                  this.props.navigation.navigate("Detail", { item })}
+                  this.props.navigation.navigate("Detail", { item })
+                }
               >
-
-                <Card >
+                <Card>
                   <CardItem cardBody>
                     <Image
                       source={{ uri: item.image_url }}

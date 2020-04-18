@@ -10,4 +10,3 @@ export const SET_ERRORS = "SET_ERRORS";
 // options
 export const SET_COLOR = "SET_COLOR";
 export const SET_SIZE = "SET_SIZE";
-

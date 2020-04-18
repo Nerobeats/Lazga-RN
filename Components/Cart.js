@@ -45,14 +45,19 @@ class Cart extends Component {
                 </ListItem>
               );
             })}
-            <Button rounded info style={{
-              alignSelf: "center",
-              marginTop: 10,
-              backgroundColor: "#2D7FC0",
-              borderBottomWidth: 2,
-              borderLeftWidth: 2,
-              borderRightWidth: 1,
-            }} onPress={() => this.props.checkoutCart()}>
+            <Button
+              rounded
+              info
+              style={{
+                alignSelf: "center",
+                marginTop: 10,
+                backgroundColor: "#2D7FC0",
+                borderBottomWidth: 2,
+                borderLeftWidth: 2,
+                borderRightWidth: 1,
+              }}
+              onPress={() => this.props.checkoutCart()}
+            >
               <Text>Checkout</Text>
             </Button>
           </List>
@@ -63,7 +68,6 @@ class Cart extends Component {
 }
 const mapStateToProps = (state) => ({
   items: state.cart.items,
-
 });
 const mapDispatchToProps = (dispatch) => {
   return {
