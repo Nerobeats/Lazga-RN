@@ -1,6 +1,6 @@
 import { FETCH_ITEMS } from "../actions/actionTypes";
 
-const initialState = { items: null };
+const initialState = { items: [] };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
