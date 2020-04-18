@@ -56,7 +56,7 @@ class ColorSize extends Component {
                         </Text>
                             <Button
                                 title="pick a color"
-                                style={{ backgroundColor: color, alignSelf: "center", marginLeft: 2, width: 40, height: 40 }}
+                                style={{ backgroundColor: color, alignSelf: "center", marginLeft: 2, width: 40, height: 40, borderColor: "#878787", borderWidth: 0.5 }}
                                 onPress={() => {
                                     this.setState({ visible: true });
                                 }}
