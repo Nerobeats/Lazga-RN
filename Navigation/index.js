@@ -14,7 +14,7 @@ const { Navigator, Screen } = createStackNavigator();
 function RootNavigator() {
   return (
     <Navigator
-      initialRouteName="Login"
+      initialRouteName="List"
       screenOptions={{
         headerTintColor: "black",
         headerStyle: {

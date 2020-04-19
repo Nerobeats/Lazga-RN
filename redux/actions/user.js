@@ -35,7 +35,7 @@ export const checkForToken = () => async (dispatch) => {
 export const login = (userData, redirect) => async (dispatch) => {
   try {
     const res = await instance.post("login/", userData);
-    const { token } = res.data;
+    const token = res.data.access;
 
     dispatch(setCurrentUser(token));
     redirect();
@@ -47,9 +47,7 @@ export const login = (userData, redirect) => async (dispatch) => {
 export const signup = (userData, redirect) => async (dispatch) => {
   try {
     const res = await instance.post("register/", userData);
-    const { token } = res.data;
-
-    dispatch(setCurrentUser(token));
+    dispatch(login(userData));
     redirect();
   } catch (error) {
     dispatch(setErrors(error.response.data));
