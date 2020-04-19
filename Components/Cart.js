@@ -18,7 +18,7 @@ import { checkoutCart } from "../redux/actions/cart";
 
 class Cart extends Component {
   render() {
-    const { navigation, user, logout } = this.props
+    const { navigation, user, removeItemFromCart, checkoutCart } = this.props
     return (
       <Container>
         <Content>
@@ -39,7 +39,7 @@ class Cart extends Component {
                     <Button
                       danger
                       transparent
-                      onPress={() => this.props.removeItemFromCart(item)}
+                      onPress={() => removeItemFromCart(item)}
                     >
                       <Text>Remove</Text>
                     </Button>
@@ -59,7 +59,7 @@ class Cart extends Component {
                   borderLeftWidth: 2,
                   borderRightWidth: 1,
                 }}
-                onPress={() => this.props.checkoutCart()}
+                onPress={() => checkoutCart()}
               >
                 <Text>Checkout</Text>
               </Button> :

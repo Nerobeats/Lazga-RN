@@ -21,25 +21,23 @@ class Detail extends Component {
     const { size, color } = this.props;
 
     return (
-      <Container>
-        <Content>
-          <Card>
-            <CardItem cardBody>
-              <Image
-                source={{ uri: item.image_url }}
-                style={{ height: 350, width: "100%" }}
-              />
-            </CardItem>
-            <CardItem>
-              <Left>
-                <Body>
-                  <Text>Name:{item.name}</Text>
-                  <Text>Price:{item.itemPrice}</Text>
-                  <Text>description:{item.description}</Text>
-                </Body>
-              </Left>
-            </CardItem>
-          </Card>
+      <Container style={{ backgroundColor: "#e8e8ec" }}>
+        <Content >
+          <CardItem cardBody>
+            <Image
+              source={{ uri: item.image_url }}
+              style={{ height: 350, width: "100%" }}
+            />
+          </CardItem>
+          <CardItem style={{ backgroundColor: "#e8e8ec" }}>
+            <Left>
+              <Body>
+                <Text>Name: {item.name}</Text>
+                <Text>Price: {item.itemPrice} JD</Text>
+                <Text>description: {item.description}</Text>
+              </Body>
+            </Left>
+          </CardItem>
           <ColorSize />
 
           <Button
