@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 class LazgaList extends Component {
   render() {
     return (
-      <Container>
+      <Container style={{ backgroundColor: "#e8e8ec" }}>
         <Content>
           {this.props.items.map((item) => {
             return (
@@ -29,16 +29,8 @@ class LazgaList extends Component {
                     />
                   </CardItem>
                   <CardItem>
-                    <Button
-                      dark
-                      transparent
-                      style={{
-                        alignSelf: "center",
-                      }}
-                      full
-                    >
-                      <Text>{item.name}</Text>
-                    </Button>
+
+                    <Text >{item.name}</Text>
                   </CardItem>
                 </Card>
               </TouchableOpacity>
