@@ -39,7 +39,7 @@ function Home({ navigation }) {
                     height={400}    //Height of your slider
                     slideCount={3}    //How many views you are adding to slide
                     dots={true}     // Pagination dots visibility true for visibile 
-                    dotActiveColor='red'     //Pagination dot active color
+                    dotActiveColor='#2D7FC0'     //Pagination dot active color
                     dotInactiveColor='gray'    // Pagination do inactive color
                     dotsContainerStyle={styles.dotContainer}     // Container style of the pagination dots
                     autoSlide={false}    //The views will slide automatically
@@ -47,18 +47,18 @@ function Home({ navigation }) {
                 />
                 <Row>
                     <Col>
-                        <Button full rounded
-                            style={{ alignSelf: "center", width: 100 }}
+                        <Button full bordered rounded
+                            style={{ alignSelf: "center", width: 100, borderColor: "#2D7FC0", }}
                             onPress={() => navigation.navigate("Login")}
                         >
-                            <Text>
+                            <Text style={{ color: "#2D7FC0" }}>
                                 Login
     </Text>
                         </Button >
                     </Col>
                     <Col>
                         <Button full rounded
-                            style={{ alignSelf: "center", width: 100 }}
+                            style={{ alignSelf: "center", width: 100, backgroundColor: "#2D7FC0" }}
                             onPress={() => navigation.navigate("Signup")}
                         >
                             <Text>
@@ -68,8 +68,8 @@ function Home({ navigation }) {
                     </Col>
                 </Row>
                 <Button full transparent onPress={() => navigation.navigate("List")}>
-                    <Text>
-                        continue as a gest
+                    <Text style={{ color: "#2D7FC0" }}>
+                        continue as a gest -->
                         </Text>
                 </Button>
             </Content>

@@ -42,15 +42,12 @@ class Detail extends Component {
 
           <Button
             onPress={() => this.props.addItemToCart(item)}
+            rounded
             style={{
               alignSelf: "center",
+              marginTop: 10,
               backgroundColor: "#2D7FC0",
-              borderBottomWidth: 2,
-              borderLeftWidth: 2,
-              borderRightWidth: 1,
-              marginBottom: 10,
             }}
-            rounded
           >
             <Text style={{ color: "white" }}> Add to cart </Text>
           </Button>

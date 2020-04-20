@@ -10,7 +10,7 @@ import {
   Body,
   Right,
   Button,
-
+  Icon
 } from "native-base";
 import { connect } from "react-redux";
 import { removeItemFromCart } from "../redux/actions/cart";
@@ -50,32 +50,33 @@ class Cart extends Component {
             {user ?
               <Button
                 rounded
-                info
                 style={{
                   alignSelf: "center",
                   marginTop: 10,
                   backgroundColor: "#2D7FC0",
-                  borderBottomWidth: 2,
-                  borderLeftWidth: 2,
-                  borderRightWidth: 1,
                 }}
                 onPress={() => checkoutCart()}
               >
+
+                <Icon
+                  name="shoppingcart"
+                  type="AntDesign"
+                />
                 <Text>Checkout</Text>
+
               </Button> :
               <Button
                 rounded
-                info
                 style={{
                   alignSelf: "center",
                   marginTop: 10,
                   backgroundColor: "#2D7FC0",
-                  borderBottomWidth: 2,
-                  borderLeftWidth: 2,
-                  borderRightWidth: 1,
                 }}
                 onPress={() => navigation.navigate("Login")}
-              >
+              >  <Icon
+                  name="shoppingcart"
+                  type="AntDesign"
+                />
                 <Text>Please login to checkout</Text>
               </Button>}
           </List>
