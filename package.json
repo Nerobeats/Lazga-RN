@@ -23,6 +23,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
     "react-native-color-palette": "^2.2.0",
     "react-native-easy-grid": "^0.2.2",
+    "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-modals": "^0.19.9",
     "react-native-popup-dialog": "^0.18.3",
