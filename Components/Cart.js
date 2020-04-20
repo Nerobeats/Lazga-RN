@@ -10,7 +10,7 @@ import {
   Body,
   Right,
   Button,
-  Icon
+  Icon,
 } from "native-base";
 import { connect } from "react-redux";
 import { removeItemFromCart } from "../redux/actions/cart";
@@ -18,7 +18,7 @@ import { checkoutCart } from "../redux/actions/cart";
 
 class Cart extends Component {
   render() {
-    const { navigation, user, removeItemFromCart, checkoutCart } = this.props
+    const { navigation, user, removeItemFromCart, checkoutCart } = this.props;
     return (
       <Container>
         <Content>
@@ -47,7 +47,7 @@ class Cart extends Component {
                 </ListItem>
               );
             })}
-            {user ?
+            {user ? (
               <Button
                 rounded
                 style={{
@@ -57,14 +57,10 @@ class Cart extends Component {
                 }}
                 onPress={() => checkoutCart()}
               >
-
-                <Icon
-                  name="shoppingcart"
-                  type="AntDesign"
-                />
+                <Icon name="shoppingcart" type="AntDesign" />
                 <Text>Checkout</Text>
-
-              </Button> :
+              </Button>
+            ) : (
               <Button
                 rounded
                 style={{
@@ -73,12 +69,11 @@ class Cart extends Component {
                   backgroundColor: "#2D7FC0",
                 }}
                 onPress={() => navigation.navigate("Login")}
-              >  <Icon
-                  name="shoppingcart"
-                  type="AntDesign"
-                />
+              >
+                <Icon name="shoppingcart" type="AntDesign" />
                 <Text>Please login to checkout</Text>
-              </Button>}
+              </Button>
+            )}
           </List>
         </Content>
       </Container>
@@ -87,14 +82,12 @@ class Cart extends Component {
 }
 const mapStateToProps = (state) => ({
   items: state.cart.items,
-  user: state.user
-
+  user: state.user,
 });
 const mapDispatchToProps = (dispatch) => {
   return {
     removeItemFromCart: (item) => dispatch(removeItemFromCart(item)),
     checkoutCart: () => dispatch(checkoutCart()),
-
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
