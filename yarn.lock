@@ -4924,6 +4924,11 @@ react-tween-state@^0.1.5:
     raf "^3.1.0"
     tween-functions "^1.0.1"
 
+react-utils@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-utils/-/react-utils-1.0.0.tgz#57255994c876f2313271f9c1b1a49ee06b5c6aeb"
+  integrity sha1-VyVZlMh28jEycfnBsaSe4Gtcaus=
+
 react@~16.9.0:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"

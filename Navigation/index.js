@@ -1,67 +1,59 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
 import { Icon } from "native-base";
-// Screens
-import Login from "../Components/Login";
-import Signup from "../Components/Signup";
-import List from "../Components/List";
-import Detail from "../Components/Detail";
-import Categories from "../Components/Categories";
-import Cart from "../Components/Cart";
-import Profile from "../Components/Profile";
-import Home from "../Components/Home";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { LIST, CATEGORIES, CART, PROFILE, FAV } from "./screenNames";
+import UserStack from "./StackNavigators/UserStack";
+import CartStack from "./StackNavigators/CartStack";
+import HomeStack from "./StackNavigators/HomeStack";
+import SearchStack from "./StackNavigators/SearchStack";
 
-const { Navigator, Screen } = createStackNavigator();
+const { Navigator, Screen } = createBottomTabNavigator();
 
-function RootNavigator() {
+function RootTabNavigator() {
   return (
     <Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        headerTintColor: "black",
-        headerStyle: {
+      initialRouteName={LIST}
+      tabBarOptions={{
+        showLabel: false,
+        activeTintColor: "#2d7fc0",
+        inactiveTintColor: "black",
+        style: {
           backgroundColor: "white",
         },
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
       }}
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color }) => {
+          let iconName = "";
+          switch (route.name) {
+            case LIST:
+              iconName = "home";
+              break;
+            case CATEGORIES:
+              iconName = "search";
+              break;
+            case CART:
+              iconName = "cart";
+              break;
+            case PROFILE:
+              iconName = "person";
+              break;
+            case FAV:
+              iconName = "heart";
+              break;
+            default:
+              return <Icon style={{ color }} />;
+          }
+          return <Icon name={iconName} style={{ color }} />;
+        },
+      })}
     >
-      <Screen name="Login" component={Login} />
-      <Screen name="Signup" component={Signup} />
-      <Screen name="Profile" component={Profile} />
-      <Screen name="Categories" component={Categories} />
-      <Screen name="Home" component={Home} options={{ headerShown: false }} />
-      <Screen name="Cart" component={Cart} />
-      <Screen
-        name="List"
-        component={List}
-        options={({ navigation }) => ({
-          title: "Our Products",
-          headerRight: () => (
-            <Icon
-              name="shoppingcart"
-              type="AntDesign"
-              onPress={() => navigation.navigate("Cart")}
-            />
-          ),
-        })}
-      />
-      <Screen
-        name="Detail"
-        component={Detail}
-        options={({ navigation }) => ({
-          title: "Our Products",
-          headerRight: () => (
-            <Icon
-              name="shoppingcart"
-              type="AntDesign"
-              onPress={() => navigation.navigate("Cart")}
-            />
-          ),
-        })}
-      />
+      <Screen name={LIST} component={HomeStack} />
+      <Screen name={CATEGORIES} component={SearchStack} />
+      <Screen name={FAV} component={HomeStack} />
+      <Screen name={CART} component={CartStack} />
+      <Screen name={PROFILE} component={UserStack} />
     </Navigator>
   );
 }
-export default RootNavigator;
+
+export default RootTabNavigator;
