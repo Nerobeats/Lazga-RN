@@ -47,11 +47,13 @@ function RootTabNavigator() {
         },
       })}
     >
+
       <Screen name={LIST} component={HomeStack} />
       <Screen name={CATEGORIES} component={SearchStack} />
       <Screen name={FAV} component={HomeStack} />
       <Screen name={CART} component={CartStack} />
       <Screen name={PROFILE} component={UserStack} />
+
     </Navigator>
   );
 }
