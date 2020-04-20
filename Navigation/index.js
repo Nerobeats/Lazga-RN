@@ -16,7 +16,7 @@ const { Navigator, Screen } = createStackNavigator();
 function RootNavigator() {
   return (
     <Navigator
-      initialRouteName="Home"
+      initialRouteName="Categories"
       screenOptions={{
         headerTintColor: "black",
         headerStyle: {
@@ -30,7 +30,7 @@ function RootNavigator() {
       <Screen name="Login" component={Login} />
       <Screen name="Signup" component={Signup} />
       <Screen name="Profile" component={Profile} />
-      <Screen name="Categories" component={Categories} />
+      <Screen name="Categories" component={Categories} options={{ headerShown: false }} />
       <Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Screen name="Cart" component={Cart} />
       <Screen

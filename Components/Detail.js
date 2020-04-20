@@ -26,7 +26,12 @@ class Detail extends Component {
           <CardItem cardBody>
             <Image
               source={{ uri: item.image_url }}
-              style={{ height: 350, width: "100%" }}
+              style={{
+                alignSelf: "center",
+                height: 300,
+                width: null,
+                flex: 1,
+              }}
             />
           </CardItem>
           <CardItem style={{ backgroundColor: "#e8e8ec" }}>
@@ -47,6 +52,7 @@ class Detail extends Component {
               alignSelf: "center",
               marginTop: 10,
               backgroundColor: "#2D7FC0",
+              marginBottom: 10
             }}
           >
             <Text style={{ color: "white" }}> Add to cart </Text>
