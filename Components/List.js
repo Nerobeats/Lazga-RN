@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Content, Card, CardItem, Text, Button } from "native-base";
+import { Container, Content, Card, CardItem, Text } from "native-base";
 import { Image, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 
