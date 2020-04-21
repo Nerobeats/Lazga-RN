@@ -1,42 +1,89 @@
-import React, { Component } from 'react';
-import { Container, Header, Item, Input, Icon, Button, Text, Card, CardItem, Content } from 'native-base';
+import React, { Component } from "react";
+import {
+  Container,
+  Header,
+  Item,
+  Input,
+  Icon,
+  Button,
+  Text,
+  Card,
+  CardItem,
+  Content,
+} from "native-base";
 import { Image, TouchableOpacity } from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
 
-import { ButtonGroup } from "react-native-elements"
+import { ButtonGroup } from "react-native-elements";
 import { connect } from "react-redux";
+import { TextInput } from "react-native";
 
 class Catagories extends Component {
   state = {
     selectedIndex: 0,
     query: "",
-    counter: 0
-
-  }
+    counter: 0,
+    type: "",
+  };
   resetCounter() {
-    this.setState({ counter: 0 })
+    this.setState({ counter: 0 });
   }
   incrementCounter() {
-    this.setState({ counter: this.state.counter + 1 })
+    this.setState({ counter: this.state.counter + 1 });
   }
   updateIndex(selectedIndex) {
-    this.setState({ selectedIndex })
+    this.setState({ selectedIndex });
+    this.setState({ type: this.props.types[selectedIndex].type })
   }
-  changeHandler(event) {
-    this.setState({ query: event.target.value })
+  setAllItems(type) {
+    this.setState({ type: type });
   }
   render() {
-    const buttons = ['All', 'Hoodies', 'T-shirts', 'Mugs', 'stickers']
-    const { selectedIndex } = this.state
+    const buttons = this.props.types.map((type) => type.type);
+    const typedItems = () => {
+      if (this.state.type === "All Items") {
+        this.setState({ type: "" });
+        return this.props.items
+      }
+      else {
+        if (this.state.type === "") {
+          return this.props.items
+        }
+        const typeID = this.props.types.filter((type) => type.type === this.state.type);
+        console.log(typeID[0].id)
+        return this.props.items.filter((item) => item.type === typeID[0].id);
+      }
+    };
+    const { selectedIndex } = this.state;
+    const query = this.state.query.toLowerCase();
+    const filteredItems = typedItems().filter((item) => (
 
+      `${item.tags} ${item.description}`.toLowerCase().includes(query)
+    )
+
+
+    );
     return (
       <Container>
-        <Header searchBar rounded transparent
-          style={{ borderRadius: 10, borderBottomWidth: 1, borderBottomColor: "#e8e8ec", marginTop: 5 }}
+        {console.log()}
+        <Header
+          searchBar
+          rounded
+          transparent
+          style={{
+            borderRadius: 10,
+            borderBottomWidth: 1,
+            borderBottomColor: "#e8e8ec",
+            marginTop: 5,
+          }}
         >
           <Item>
             <Icon name="ios-search" />
-            <Input placeholder="Search" onChange={() => this.changeHandler()} />
+            <TextInput
+              placeholder="Search"
+              onChangeText={(text) => this.setState({ query: text })}
+            />
+
           </Item>
           <Button transparent>
             <Text>Search</Text>
@@ -46,12 +93,10 @@ class Catagories extends Component {
           onPress={(number) => this.updateIndex(number)}
           selectedIndex={selectedIndex}
           buttons={buttons}
-          containerStyle={{ height: 50 }}
-
+          containerStyle={{ height: 40, }}
         />
         <Content>
-
-          {this.props.items.map((item) => {
+          {filteredItems.map((item) => {
             return (
               <TouchableOpacity
                 key={item.id}
@@ -59,34 +104,38 @@ class Catagories extends Component {
                   this.props.navigation.navigate("Detail", { item })
                 }
               >
-                <Card style={{
-                  resizeMode: "contain",
-                  width: 175
-                }} >
-                  <CardItem >
-                    <Image
-                      source={{ uri: item.image_url }}
-                      style={{ height: 300, width: null, flex: 1, resizeMode: "cover" }}
-                    />
-                  </CardItem>
-                  <CardItem>
+                <Card
+                  style={{
+                    resizeMode: "contain",
+                    height: 175,
+                    flex: 1
+                  }}
+                >
 
-                    <Text >{item.name}</Text>
+                  <Image
+                    source={{ uri: item.image_url }}
+                    style={{
+                      height: 125,
+                      width: null,
+                      flex: 1,
+                      resizeMode: "cover",
+                    }}
+                  />
+
+                  <CardItem>
+                    <Text>{item.name}</Text>
                   </CardItem>
                 </Card>
               </TouchableOpacity>
-
             );
           })}
-
         </Content>
-
       </Container>
-
     );
   }
 }
 const mapStateToProps = (state) => ({
   items: state.item.items,
+  types: state.item.types,
 });
 export default connect(mapStateToProps)(Catagories);

@@ -1,6 +1,6 @@
-import { FETCH_ITEMS } from "../actions/actionTypes";
+import { FETCH_ITEMS, FETCH_TYPES } from "../actions/actionTypes";
 
-const initialState = { items: [] };
+const initialState = { items: [], types: [] };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -9,6 +9,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         items: list,
+      };
+    case FETCH_TYPES:
+      const types = action.payload;
+      return {
+        ...state,
+        types: types,
       };
     default:
       return state;

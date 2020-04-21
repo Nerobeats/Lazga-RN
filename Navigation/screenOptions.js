@@ -6,4 +6,5 @@ export default {
     fontWeight: "bold",
   },
   headerTintColor: "white",
+  headerShown: false
 };
