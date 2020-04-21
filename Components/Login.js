@@ -46,8 +46,9 @@ class Login extends Component {
           </Body>
           <Form>
             <Item stackedLabel>
-              <Label>Username</Label>
+              <Label></Label>
               <TextInput
+                style={{ width: "100%" }}
                 placeholder="Username"
                 placeholderTextColor="#A6AEC1"
                 value={this.state.username}
@@ -55,8 +56,9 @@ class Login extends Component {
               />
             </Item>
             <Item stackedLabel last>
-              <Label>Password</Label>
+              <Label></Label>
               <TextInput
+                style={{ width: "100%" }}
                 placeholder="Password"
                 placeholderTextColor="#A6AEC1"
                 secureTextEntry={true}

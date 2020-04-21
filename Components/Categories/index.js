@@ -75,6 +75,7 @@ class Catagories extends Component {
           <Item>
             <Icon name="ios-search" />
             <TextInput
+              style={{ width: "100%" }}
               placeholder="Search"
               onChangeText={(text) => this.setState({ query: text })}
             />
