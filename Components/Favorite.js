@@ -8,29 +8,41 @@ class LazgaList extends Component {
     render() {
         return (
             <Container>
-                <Header style={{ height: 20, marginTop: 25 }} >
+                <Header style={{ height: 20 }} >
                     <Text style={{ color: "white" }}>
                         My Favorites
 </Text>
                 </Header>
                 <Tabs renderTabBar={() => <ScrollableTab />} >
                     <Tab heading="All">
-
+                        <Text>
+                            111111111111111111111111111111111
+</Text>
                     </Tab>
                     <Tab heading="Tee's">
-
+                        <Text>
+                            22222222222222222222222222222222222
+</Text>
                     </Tab>
                     <Tab heading="Mugs">
-
+                        <Text>
+                            333333333333333333333333333333333333
+</Text>
                     </Tab>
                     <Tab heading="Posters">
-
+                        <Text>
+                            44444444444444444444444444444444444
+</Text>
                     </Tab>
                     <Tab heading="Caps">
-
+                        <Text>
+                            55555555555555555555555555555
+</Text>
                     </Tab>
                     <Tab heading="Popsockets">
-
+                        <Text>
+                            66666666666666666666666666666666
+</Text>
                     </Tab>
                 </Tabs>
             </Container>
