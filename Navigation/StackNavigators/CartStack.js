@@ -10,7 +10,7 @@ const { Navigator, Screen } = createStackNavigator();
 export default function CartStack() {
   return (
     <Navigator initialRouteName={CART} screenOptions={screenOptions}>
-      <Screen name={CART} component={Cart} options={{ headerShown: false }} />
+      <Screen name={CART} component={Cart} />
       <Screen
         name={"Signup"}
         component={Signup}

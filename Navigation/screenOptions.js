@@ -1,10 +1,9 @@
 export default {
-  headerStyle: {
-    backgroundColor: "black",
-  },
+  headerTintColor: "black",
+
   headerTitleStyle: {
     fontWeight: "bold",
-  },
-  headerTintColor: "white",
-  headerShown: false
-};
+  }
+  ,
+
+}

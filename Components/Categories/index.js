@@ -10,6 +10,8 @@ import {
   Card,
   CardItem,
   Content,
+  Left,
+  ScrollableTab
 } from "native-base";
 import { Image, TouchableOpacity } from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
@@ -93,7 +95,7 @@ class Catagories extends Component {
           onPress={(number) => this.updateIndex(number)}
           selectedIndex={selectedIndex}
           buttons={buttons}
-          containerStyle={{ height: 40, }}
+          containerStyle={{ height: 40 }}
         />
         <Content>
           {filteredItems.map((item) => {
@@ -107,7 +109,7 @@ class Catagories extends Component {
                 <Card
                   style={{
                     resizeMode: "contain",
-                    height: 175,
+                    height: 180,
                     flex: 1
                   }}
                 >
@@ -124,6 +126,12 @@ class Catagories extends Component {
 
                   <CardItem>
                     <Text>{item.name}</Text>
+                    <Left>
+
+                    </Left>
+                    <Button full danger rounded transparent onPress={() => alert("Added to favorites")}>
+                      <Icon name='heart' style={{ fontSize: 30, color: "#2d7fc0" }} />
+                    </Button>
                   </CardItem>
                 </Card>
               </TouchableOpacity>

@@ -31,28 +31,27 @@ class Signup extends Component {
     const { errors } = this.props;
     return (
       <Container>
-        <Image
-          source={logo}
-          style={{
-            flex: 1,
-            height: null,
-            width: 300,
-            alignSelf: "center",
-            resizeMode: "cover",
-          }}
-        />
-
-        <Card>
-          <CardItem>
-            <Body>
-              <Text style={{ alignSelf: "center" }}>
-                {errors ? errors : "Welcome to Lazga family "}
-              </Text>
-            </Body>
-          </CardItem>
-        </Card>
 
         <Content>
+          <Image
+            source={logo}
+            style={{
+              flex: 1,
+              height: 200,
+              width: 200,
+              alignSelf: "center",
+              resizeMode: "cover",
+              marginTop: 5
+            }}
+          />
+
+
+          <Body>
+            <Text style={{ alignSelf: "center" }}>
+              {errors ? errors : "Welcome to Lazga family "}
+            </Text>
+          </Body>
+
           <Form>
             <Item stackedLabel>
               <Label>Username</Label>
@@ -107,15 +106,7 @@ class Signup extends Component {
                 this.props.navigation.navigate("List")
               )
             }
-            style={{
-              alignSelf: "center",
-              backgroundColor: "#2D7FC0",
-              borderBottomWidth: 2,
-              borderLeftWidth: 2,
-              borderRightWidth: 1,
-              width: "25%",
-              marginTop: 10,
-            }}
+            style={{ alignSelf: "center", width: 100, backgroundColor: "#2D7FC0", marginTop: 10 }}
             full
             rounded
           >
