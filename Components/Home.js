@@ -12,9 +12,9 @@ import { Col, Row } from "react-native-easy-grid";
 
 function Home({ navigation }) {
     return (
-        <Container style={{ marginTop: 25 }} >
+        <Container  >
             <Content >
-                <Image source={name} style={{ height: 70, width: null, flex: 1, resizeMode: "contain" }} />
+                <Image source={name} style={{ height: 70, width: null, flex: 1, resizeMode: "contain", marginTop: 25 }} />
                 <ViewSlider
                     renderSlides={
                         <>

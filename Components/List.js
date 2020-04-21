@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Container, Content, Card, CardItem, Text } from "native-base";
+import { Container, Content, Card, CardItem, Text, Icon, Button, Right, Left, Toast } from "native-base";
 import { Image, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 
 class LazgaList extends Component {
   render() {
     return (
-      <Container style={{ backgroundColor: "#e8e8ec" }}>
+      <Container >
         <Content>
           {this.props.items.map((item) => {
             return (
@@ -16,21 +16,35 @@ class LazgaList extends Component {
                   this.props.navigation.navigate("Detail", { item })
                 }
               >
-                <Card>
-                  <CardItem cardBody>
-                    <Image
-                      source={{ uri: item.image_url }}
-                      style={{
-                        alignSelf: "center",
-                        height: 300,
-                        width: null,
-                        flex: 1,
-                      }}
-                    />
-                  </CardItem>
+                <Card
+                  style={{
+                    resizeMode: "contain",
+                    height: 180,
+                    flex: 1
+                  }}
+                >
+
+                  <Image
+                    source={{ uri: item.image_url }}
+                    style={{
+                      height: 125,
+                      width: null,
+                      flex: 1,
+                      resizeMode: "cover",
+                    }}
+                  />
+
                   <CardItem>
 
-                    <Text >{item.name}</Text>
+
+                    <Text>{item.name}</Text>
+
+                    <Left>
+
+                    </Left>
+                    <Button full danger rounded transparent onPress={() => alert("Added to favorites")}>
+                      <Icon name='heart' style={{ fontSize: 30, color: "#2d7fc0" }} />
+                    </Button>
                   </CardItem>
                 </Card>
               </TouchableOpacity>
