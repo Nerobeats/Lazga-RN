@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import {
   Container,
   Content,
-  Card,
   CardItem,
   Body,
   Text,
   Button,
   Left,
-  H3,
-  Picker,
 } from "native-base";
 import { Image } from "react-native";
 import { connect } from "react-redux";
@@ -18,11 +15,11 @@ import ColorSize from "./ColorSize";
 class Detail extends Component {
   render() {
     const { item } = this.props.route.params;
-    const { size, color } = this.props;
+    //const { size, color } = this.props;
 
     return (
       <Container style={{ backgroundColor: "#e8e8ec" }}>
-        <Content >
+        <Content>
           <CardItem cardBody>
             <Image
               source={{ uri: item.image_url }}
@@ -52,7 +49,7 @@ class Detail extends Component {
               alignSelf: "center",
               marginTop: 10,
               backgroundColor: "#2D7FC0",
-              marginBottom: 10
+              marginBottom: 10,
             }}
           >
             <Text style={{ color: "white" }}> Add to cart </Text>

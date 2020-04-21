@@ -3,7 +3,6 @@ import {
   Container,
   Header,
   Item,
-  Input,
   Icon,
   Button,
   Text,
@@ -11,11 +10,8 @@ import {
   CardItem,
   Content,
   Left,
-  ScrollableTab
 } from "native-base";
 import { Image, TouchableOpacity } from "react-native";
-import { Col, Row, Grid } from "react-native-easy-grid";
-
 import { ButtonGroup } from "react-native-elements";
 import { connect } from "react-redux";
 import { TextInput } from "react-native";
@@ -35,7 +31,7 @@ class Catagories extends Component {
   }
   updateIndex(selectedIndex) {
     this.setState({ selectedIndex });
-    this.setState({ type: this.props.types[selectedIndex].type })
+    this.setState({ type: this.props.types[selectedIndex].type });
   }
   setAllItems(type) {
     this.setState({ type: type });
@@ -45,25 +41,22 @@ class Catagories extends Component {
     const typedItems = () => {
       if (this.state.type === "All Items") {
         this.setState({ type: "" });
-        return this.props.items
-      }
-      else {
+        return this.props.items;
+      } else {
         if (this.state.type === "") {
-          return this.props.items
+          return this.props.items;
         }
-        const typeID = this.props.types.filter((type) => type.type === this.state.type);
-        console.log(typeID[0].id)
+        const typeID = this.props.types.filter(
+          (type) => type.type === this.state.type
+        );
+        console.log(typeID[0].id);
         return this.props.items.filter((item) => item.type === typeID[0].id);
       }
     };
     const { selectedIndex } = this.state;
     const query = this.state.query.toLowerCase();
-    const filteredItems = typedItems().filter((item) => (
-
+    const filteredItems = typedItems().filter((item) =>
       `${item.tags} ${item.description}`.toLowerCase().includes(query)
-    )
-
-
     );
     return (
       <Container>
@@ -85,7 +78,6 @@ class Catagories extends Component {
               placeholder="Search"
               onChangeText={(text) => this.setState({ query: text })}
             />
-
           </Item>
           <Button transparent>
             <Text>Search</Text>
@@ -110,10 +102,9 @@ class Catagories extends Component {
                   style={{
                     resizeMode: "contain",
                     height: 180,
-                    flex: 1
+                    flex: 1,
                   }}
                 >
-
                   <Image
                     source={{ uri: item.image_url }}
                     style={{
@@ -126,11 +117,18 @@ class Catagories extends Component {
 
                   <CardItem>
                     <Text>{item.name}</Text>
-                    <Left>
-
-                    </Left>
-                    <Button full danger rounded transparent onPress={() => alert("Added to favorites")}>
-                      <Icon name='heart' style={{ fontSize: 30, color: "#2d7fc0" }} />
+                    <Left></Left>
+                    <Button
+                      full
+                      danger
+                      rounded
+                      transparent
+                      onPress={() => alert("Added to favorites")}
+                    >
+                      <Icon
+                        name="heart"
+                        style={{ fontSize: 30, color: "#2d7fc0" }}
+                      />
                     </Button>
                   </CardItem>
                 </Card>

@@ -7,7 +7,7 @@ import CartStack from "./StackNavigators/CartStack";
 import HomeStack from "./StackNavigators/HomeStack";
 import SearchStack from "./StackNavigators/SearchStack";
 import FavoritesStack from "./StackNavigators/FavoritesStack";
-import Home from "../Components/Home"
+import Home from "../Components/Home";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -49,15 +49,11 @@ function RootTabNavigator() {
         },
       })}
     >
-
       <Screen name={LIST} component={HomeStack} />
       <Screen name={CATEGORIES} component={SearchStack} />
       <Screen name={FAV} component={FavoritesStack} />
       <Screen name={CART} component={CartStack} />
       <Screen name={PROFILE} component={UserStack} />
-
-
-
     </Navigator>
   );
 }

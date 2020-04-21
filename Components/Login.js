@@ -27,12 +27,6 @@ class Login extends Component {
     const { errors } = this.props;
     return (
       <Container>
-
-
-
-
-
-
         <Content>
           <Image
             source={logo}
@@ -42,7 +36,7 @@ class Login extends Component {
               width: 250,
               alignSelf: "center",
               resizeMode: "cover",
-              marginTop: 5
+              marginTop: 5,
             }}
           />
           <Body>
@@ -77,7 +71,12 @@ class Login extends Component {
                 this.props.navigation.navigate("List")
               )
             }
-            style={{ alignSelf: "center", width: 100, backgroundColor: "#2D7FC0", marginTop: 10 }}
+            style={{
+              alignSelf: "center",
+              width: 100,
+              backgroundColor: "#2D7FC0",
+              marginTop: 10,
+            }}
             full
             rounded
           >

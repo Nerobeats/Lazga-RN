@@ -9,13 +9,21 @@ const { Navigator, Screen } = createStackNavigator();
 export default function SearchStack() {
   return (
     <Navigator initialRouteName={CATEGORIES} screenOptions={screenOptions}>
-      <Screen name={CATEGORIES} component={Categories} options={{ headerShown: false }} />
-      <Screen name="Detail" component={Detail} options={({ route }) => {
-        const { item } = route.params;
-        return {
-          title: item.name,
-        }
-      }} />
+      <Screen
+        name={CATEGORIES}
+        component={Categories}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name="Detail"
+        component={Detail}
+        options={({ route }) => {
+          const { item } = route.params;
+          return {
+            title: item.name,
+          };
+        }}
+      />
     </Navigator>
   );
 }

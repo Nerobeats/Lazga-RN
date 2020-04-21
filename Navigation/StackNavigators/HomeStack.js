@@ -13,14 +13,21 @@ export default function HomeStack() {
   return (
     <Navigator initialRouteName={LIST} screenOptions={screenOptions}>
       <Screen name="Home" component={Home} options={{ headerShown: false }} />
-      <Screen name={LIST} component={List} options={{ title: "Trending items" }} />
-      <Screen name="Detail" component={Detail}
+      <Screen
+        name={LIST}
+        component={List}
+        options={{ title: "Trending items" }}
+      />
+      <Screen
+        name="Detail"
+        component={Detail}
         options={({ route }) => {
           const { item } = route.params;
           return {
             title: item.name,
-          }
-        }} />
+          };
+        }}
+      />
       <Screen name={CART} component={Cart} options={{ headerShown: false }} />
     </Navigator>
   );

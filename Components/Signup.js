@@ -31,7 +31,6 @@ class Signup extends Component {
     const { errors } = this.props;
     return (
       <Container>
-
         <Content>
           <Image
             source={logo}
@@ -41,10 +40,9 @@ class Signup extends Component {
               width: 200,
               alignSelf: "center",
               resizeMode: "cover",
-              marginTop: 5
+              marginTop: 5,
             }}
           />
-
 
           <Body>
             <Text style={{ alignSelf: "center" }}>
@@ -54,8 +52,9 @@ class Signup extends Component {
 
           <Form>
             <Item stackedLabel>
-              <Label>Username</Label>
+              <Label></Label>
               <TextInput
+                style={{ width: "100%" }}
                 placeholder="Username"
                 placeholderTextColor="#A6AEC1"
                 value={this.state.username}
@@ -63,8 +62,9 @@ class Signup extends Component {
               />
             </Item>
             <Item stackedLabel last>
-              <Label>Password</Label>
+              <Label></Label>
               <TextInput
+                style={{ width: "100%" }}
                 placeholder="Password"
                 placeholderTextColor="#A6AEC1"
                 secureTextEntry={true}
@@ -73,8 +73,9 @@ class Signup extends Component {
               />
             </Item>
             <Item stackedLabel>
-              <Label>First Name</Label>
+              <Label></Label>
               <TextInput
+                style={{ width: "100%" }}
                 placeholder="First Name"
                 placeholderTextColor="#A6AEC1"
                 value={this.state.first_name}
@@ -82,8 +83,9 @@ class Signup extends Component {
               />
             </Item>
             <Item stackedLabel>
-              <Label>Last Name</Label>
+              <Label></Label>
               <TextInput
+                style={{ width: "100%" }}
                 placeholder="Last Name"
                 placeholderTextColor="#A6AEC1"
                 value={this.state.last_name}
@@ -91,8 +93,9 @@ class Signup extends Component {
               />
             </Item>
             <Item stackedLabel>
-              <Label>E-mail</Label>
+              <Label></Label>
               <TextInput
+                style={{ width: "100%" }}
                 placeholder="E-mail"
                 placeholderTextColor="#A6AEC1"
                 value={this.state.email}
@@ -106,7 +109,12 @@ class Signup extends Component {
                 this.props.navigation.navigate("List")
               )
             }
-            style={{ alignSelf: "center", width: 100, backgroundColor: "#2D7FC0", marginTop: 10 }}
+            style={{
+              alignSelf: "center",
+              width: 100,
+              backgroundColor: "#2D7FC0",
+              marginTop: 10,
+            }}
             full
             rounded
           >
